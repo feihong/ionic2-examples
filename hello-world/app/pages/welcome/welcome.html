@@ -1,0 +1,44 @@
+<ion-navbar *navbar>
+  <ion-title>Welcome</ion-title>
+</ion-navbar>
+
+<ion-content padding class="welcome">
+  <h2>Welcome to Ionic!</h2>
+
+  <ion-card>
+    <ion-card-header>Device information</ion-card-header>
+    <div ion-item *ngFor="#item of deviceItemList">
+      <span item-left>{{item[0]}}:</span>
+      <span item-right class='device-value'>{{item[1]}}</span>
+    </div>
+    <ion-card-content>
+      <p>
+        User agent:
+        <span class='device-value'>{{platform.userAgent()}}</span>
+      </p>
+      <p>
+        UUID:
+        <span class='device-value'>{{uuid}}</span>
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>One-way data binding</ion-card-header>
+    <div ion-item>
+      <button item-left (click)='onClick()'>Update greeting</button>
+      <ion-badge item-right>{{greeting.length}}</ion-badge>
+    </div>
+    <ion-card-content class='greeting'>{{greeting}}</ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Two-way data binding</ion-card-header>
+    <div ion-item>
+      <input item-left [(ngModel)]='name' placeholder='Type your name here'>
+      <ion-badge item-right class='name'>{{name.length}}</ion-badge>
+    </div>
+    <ion-card-content>{{name}}</ion-card-content>
+  </ion-card>
+
+</ion-content>
