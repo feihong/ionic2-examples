@@ -16,22 +16,23 @@ const GEOLOCATION_LABELS = new Map([
 })
 export class Geo {
   constructor() {
-    this.extra = ''
     this.geoItemList = []
+    this.showGeoData()
   }
-  requestGeoData() {
-    navigator.geolocation.getCurrentPosition(this.success, this.error)
-  }
-  success(position) {
-    let coords = position.coords
-    this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
-      let [key, label] = pair
-      return {label: label, value: coords[key] || 'N/A'}
+  showGeoData() {
+    getGeoData().then(coords => {
+      this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
+        let [key, label] = pair
+        return {label: label, value: coords[key] || 'N/A'}
+      })
     })
-    let j = JSON.stringify(this.geoItemList, null, 2)
-    alert(j)
   }
-  error(error) {
-    alert(`Code ${error.code}: ${error.message}`)
-  }
+}
+
+function getGeoData() {
+  return new Promise((resolve, reject) => {
+    let success = (position) => resolve(position.coords)
+    let error = (err) => alert(`Code ${err.code}: ${err.message}`)
+    navigator.geolocation.getCurrentPosition(success, error)
+  })
 }
