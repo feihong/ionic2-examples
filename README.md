@@ -8,6 +8,7 @@ Install dependencies:
 
 ```
 npm install -g ionic@beta cordova
+npm install -g ios-sim
 ```
 
 ## Ionic cheatsheet
@@ -18,4 +19,4 @@ npm install -g ionic@beta cordova
 | `ionic serve` | Preview your app in the browser |
 | `ionic platform add ios` | Add iOS platform module to Cordova |
 | `ionic emulate ios` | Run your app inside the iOS Simulator |
-| `cordova plugin add name-of-plugin` | Download and install a Cordova plugin to the plugins directory |
+| `ionic plugin add name-of-plugin` | Download and install a Cordova plugin to the plugins directory |

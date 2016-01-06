@@ -29,7 +29,9 @@
       <button item-left (click)='onClick()'>Update greeting</button>
       <ion-badge item-right>{{greeting.length}}</ion-badge>
     </div>
-    <ion-card-content class='greeting'>{{greeting}}</ion-card-content>
+    <ion-card-content>
+      <p class='greeting'>{{greeting}}</p>
+    </ion-card-content>
   </ion-card>
 
   <ion-card>

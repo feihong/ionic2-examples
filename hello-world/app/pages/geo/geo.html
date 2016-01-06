@@ -1,0 +1,23 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Geolocation
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="geo">
+  <ion-card>
+    <div ion-item>
+      <button (click)='requestGeoData()'>Get location data</button>
+    </div>
+
+    <div ion-item *ngFor="#item of geoItemList">
+      <span item-left>{{item.label}}:</span>
+      <span item-right>{{item.value}}</span>
+    </div>
+
+    <ion-card-content>
+      {{extra}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

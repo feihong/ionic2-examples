@@ -21,5 +21,12 @@
     "strip-sourcemap-loader": "0.0.1"
   },
   "name": "hello-world",
-  "description": "hello-world: An Ionic project"
+  "description": "hello-world: An Ionic project",
+  "cordovaPlugins": [
+    "cordova-plugin-geolocation",
+    "cordova-plugin-device"
+  ],
+  "cordovaPlatforms": [
+    "ios"
+  ]
 }
