@@ -28,21 +28,25 @@ export class Welcome {
     this.name = ''
     this.platform = platform
     this.deviceItemList = []
-    // this.deviceItemList = [...DEVICE_LABELS]
     this.uuid = ''
 
-    document.addEventListener('deviceready', () => {
-      this.uuid = device.uuid
+    getDeviceInfo().then(info => {
+      this.uuid = info.uuid
       this.deviceItemList = [...DEVICE_LABELS].map(pair => {
         let [label, key] = pair
-        let value = device[key] || 'N/A'
-        return [label, value]
+        return {label: label, value: info[key] || 'N/A'}
       })
-    }, false)
+    })
   }
 
   onClick() {
     this.index = (this.index + 1) % MESSAGES.length
     this.greeting = MESSAGES[this.index]
   }
+}
+
+function getDeviceInfo() {
+  return new Promise((resolve, reject) => {
+    document.addEventListener('deviceready', () => resolve(device), false)
+  })
 }

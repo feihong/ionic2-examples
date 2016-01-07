@@ -3,13 +3,11 @@
 </ion-navbar>
 
 <ion-content padding class="welcome">
-  <h2>Welcome to Ionic!</h2>
-
   <ion-card>
     <ion-card-header>Device information</ion-card-header>
     <div ion-item *ngFor="#item of deviceItemList">
-      <span item-left>{{item[0]}}:</span>
-      <span item-right class='device-value'>{{item[1]}}</span>
+      <span item-left>{{item.label}}:</span>
+      <span item-right class='device-value'>{{item.value}}</span>
     </div>
     <ion-card-content>
       <p>
