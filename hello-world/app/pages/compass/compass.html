@@ -1,0 +1,15 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Compass
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="compass">
+  <ion-card>
+    <div ion-item *ngFor="#item of itemList">
+      <span item-left>{{item.label}}:</span>
+      <span item-right>{{item.value}}</span>
+    </div>
+  </ion-card>
+</ion-content>

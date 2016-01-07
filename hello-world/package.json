@@ -24,7 +24,8 @@
   "description": "hello-world: An Ionic project",
   "cordovaPlugins": [
     "cordova-plugin-geolocation",
-    "cordova-plugin-device"
+    "cordova-plugin-device",
+    "cordova-plugin-device-orientation"
   ],
   "cordovaPlatforms": [
     "ios"

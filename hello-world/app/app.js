@@ -1,7 +1,7 @@
 import {App, Platform} from 'ionic/ionic';
 import {Welcome} from './pages/welcome/welcome';
 import {Geo} from './pages/geo/geo';
-import {Page3} from './pages/page3/page3';
+import {Compass} from './pages/compass/compass';
 
 
 @App({
@@ -14,7 +14,7 @@ export class MyApp {
     // should be each tab's root Page
     this.tab1Root = Welcome;
     this.tab2Root = Geo;
-    this.tab3Root = Page3;
+    this.tab3Root = Compass;
 
     platform.ready().then(() => {
       // Do any necessary cordova or native calls here now that the platform is ready
