@@ -24,13 +24,10 @@ export class Geo {
     this.loading = true
     this.clearGeoData()
 
-    setTimeout(() => {
-      getGeoData().then(coords => {
-        this.loading = false
-        this.showGeoData(coords)
-      })
-    }, 1000)
-
+    getGeoData().then(coords => {
+      this.loading = false
+      this.showGeoData(coords)
+    })
   }
   clearGeoData() {
     this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
