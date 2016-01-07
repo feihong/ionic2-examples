@@ -16,15 +16,33 @@ const GEOLOCATION_LABELS = new Map([
 })
 export class Geo {
   constructor() {
+    this.loading = true
     this.geoItemList = []
-    this.showGeoData()
+    this.update()
   }
-  showGeoData() {
-    getGeoData().then(coords => {
-      this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
-        let [key, label] = pair
-        return {label: label, value: coords[key] || 'N/A'}
+  update() {
+    this.loading = true
+    this.clearGeoData()
+
+    setTimeout(() => {
+      getGeoData().then(coords => {
+        this.loading = false
+        this.showGeoData(coords)
       })
+    }, 1000)
+
+  }
+  clearGeoData() {
+    this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
+      let [key, label] = pair
+      return {label: label, value: '-'}
+    })
+  }
+  showGeoData(coords) {
+    this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
+      let [key, label] = pair
+      let value = coords[key] || 'N/A'
+      return {label: label, value: value}
     })
   }
 }

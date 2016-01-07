@@ -8,16 +8,15 @@
 <ion-content class="geo">
   <ion-card>
     <div ion-item>
-      <button (click)='showGeoData()'>Update</button>
+      <button item-left (click)='update()'>Update</button>
+      <div item-right>
+        <img *ngIf='loading' class='refresh' src='img/three-dots.svg'>
+      </div>
     </div>
 
     <div ion-item *ngFor="#item of geoItemList">
       <span item-left>{{item.label}}:</span>
       <span item-right>{{item.value}}</span>
     </div>
-
-    <ion-card-content>
-      {{extra}}
-    </ion-card-content>
   </ion-card>
 </ion-content>
