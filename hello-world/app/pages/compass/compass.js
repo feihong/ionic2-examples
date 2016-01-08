@@ -42,7 +42,7 @@ export class Compass {
   getCompassHeadings(frequency) {
     return Observable.create(observer => {
       let onSuccess = (heading) => observer.next(heading)
-      let onError = (error) => alert(`Compass error code: ${error.code}`)
+      let onError = (error) => console.log(`Compass error code: ${error.code}`)
       this.watchId = navigator.compass.watchHeading(
         onSuccess, onError, {frequency: frequency})
     })

@@ -48,7 +48,8 @@ export class Geo {
 function getGeoData() {
   return new Promise((resolve, reject) => {
     let success = (position) => resolve(position.coords)
-    let error = (err) => alert(`Code ${err.code}: ${err.message}`)
+    let error = (err) =>
+      console.log(`Geolocation error ${err.code}: ${err.message}`)
     navigator.geolocation.getCurrentPosition(success, error)
   })
 }
