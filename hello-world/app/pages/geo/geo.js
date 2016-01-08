@@ -15,9 +15,10 @@ const GEOLOCATION_LABELS = new Map([
   templateUrl: 'build/pages/geo/geo.html',
 })
 export class Geo {
-  constructor() {
-    this.loading = true
-    this.geoItemList = []
+  loading = true
+  geoItemList = []
+  
+  onPageDidEnter() {
     this.update()
   }
   update() {
