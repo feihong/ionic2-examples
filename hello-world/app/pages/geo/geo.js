@@ -1,13 +1,13 @@
 import {Page} from 'ionic/ionic';
 
 const GEOLOCATION_LABELS = new Map([
-  ['latitude', 'Latitude'],
-  ['longitude', 'Longitude'],
-  ['altitude', 'Altitude'],
-  ['accuracy', 'Accuracy'],
-  ['altitudeAccuracy', 'Altitude accuracy'],
-  ['heading', 'Heading'],
-  ['speed', 'Speed'],
+  ["Latitude", "latitude"],
+  ["Longitude", "longitude"],
+  ["Altitude", "altitude"],
+  ["Accuracy", "accuracy"],
+  ["Altitude accuracy", "altitudeAccuracy"],
+  ["Heading", "heading"],
+  ["Speed", "speed"]
 ])
 
 
@@ -17,7 +17,7 @@ const GEOLOCATION_LABELS = new Map([
 export class Geo {
   loading = true
   geoItemList = []
-  
+
   onPageDidEnter() {
     this.update()
   }
@@ -32,14 +32,14 @@ export class Geo {
   }
   clearGeoData() {
     this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
-      let [key, label] = pair
+      let [label, key] = pair
       return {label: label, value: '-'}
     })
   }
   showGeoData(coords) {
     this.geoItemList = [...GEOLOCATION_LABELS].map(pair => {
-      let [key, label] = pair
-      let value = coords[key] || 'N/A'
+      let [label, key] = pair
+      let value = (coords[key] !== null) ? coords[key].toFixed(3) : 'N/A'
       return {label: label, value: value}
     })
   }
