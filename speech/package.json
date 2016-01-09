@@ -19,6 +19,7 @@
     "cordova-plugin-tts"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ]
 }
