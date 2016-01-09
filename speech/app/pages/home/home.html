@@ -1,0 +1,21 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Speech Example
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+  <button full (click)='speak()'>Speak</button>
+  <textarea [(ngModel)]='text' rows='2' placeholder='Enter some text you want to be spoken'></textarea>
+  <div>{{status}}</div>
+  <!-- <ion-list> -->
+    <ion-input fixed-label>
+      <ion-label>Rate</ion-label>
+      <input [(ngModel)]='rate' type='number'>
+    </ion-input>
+    <ion-input fixed-label>
+      <ion-label>Locale</ion-label>
+      <input [(ngModel)]='locale' type='text'>
+    </ion-input>
+  <!-- </ion-list> -->
+</ion-content>
