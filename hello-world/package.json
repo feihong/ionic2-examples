@@ -25,9 +25,11 @@
   "cordovaPlugins": [
     "cordova-plugin-geolocation",
     "cordova-plugin-device",
-    "cordova-plugin-device-orientation"
+    "cordova-plugin-device-orientation",
+    "cordova-plugin-whitelist"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ]
 }

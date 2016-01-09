@@ -37,6 +37,8 @@ If you're targetting Android 5.1.1, install API 22. If you're focused on a diffe
 
 [Source](http://stackoverflow.com/questions/28896828/android-sdk-manager-do-you-need-to-install-all-android-platforms)
 
-## Other
+## Running on device
 
-To run the app on the device itself, use XCode to open the .xcodeproj file inside platforms/ios.
+To run the app on an iOS device, use XCode to open the .xcodeproj file inside platforms/ios. Select your device and click the run button.
+
+On Android, just run `ionic run android`. If you want live reload and console logging, you can first `ionic plugin add cordova-plugin-whitelist` and then `ionic run android -l -c`.
