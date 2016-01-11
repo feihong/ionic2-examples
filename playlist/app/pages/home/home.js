@@ -9,13 +9,8 @@ export class HomePage {
 
   constructor(platform: Platform) {
     platform.ready()
-      .then(() => {
-        console.log('platform ready');
-        return getPlaylists()
-      })
-      .then(list => {
-        this.playlists = list
-      })
+      .then(getPlaylists)
+      .then(list => this.playlists = list)
   }
   playlistSelected(playlist) {
     console.log(playlist);
