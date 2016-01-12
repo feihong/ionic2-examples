@@ -39,6 +39,6 @@ If you're targetting Android 5.1.1, install API 22. If you're focused on a diffe
 
 ## Running on device
 
-To run the app on an iOS device, use XCode to open the .xcodeproj file inside platforms/ios. Select your device and click the run button.
+To run the app on an iOS device, just run `ionic run ios --device`. You may need to first `npm install -g ios-deploy`. If you want live reload and console logging, run `ionic run ios --device -l -c`.
 
-On Android, just run `ionic run android`. If you want live reload and console logging, you can first `ionic plugin add cordova-plugin-whitelist` and then `ionic run android -l -c`.
+To run the app on an Android device, just run `ionic run android`. If you want live reload and console logging, you can first `ionic plugin add cordova-plugin-whitelist` and then `ionic run android -l -c`.
