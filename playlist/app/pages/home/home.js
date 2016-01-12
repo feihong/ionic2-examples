@@ -19,6 +19,7 @@ export class HomePage {
       .then(list => this.playlists = list)
   }
   playlistSelected(playlist) {
+    console.log(`${playlist.name} | ${playlist.id}`)
     this.nav.push(PlaylistPage, {playlist: playlist})
   }
 }

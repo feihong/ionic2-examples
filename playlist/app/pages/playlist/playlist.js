@@ -17,7 +17,10 @@ export default class PlaylistPage {
     this.nav = nav
     this.playlist = params.get('playlist')
     getSongsFromPlaylist(this.playlist.id)
-      .then(list => this.songs = list)
+      .then(list => {
+        console.log(`Received ${list.length} songs`);
+        this.songs = list
+      })
   }
   songSelected(song) {
     // alert(song.name)
