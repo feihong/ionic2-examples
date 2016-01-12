@@ -5,7 +5,12 @@ import PlaylistPage from '../playlist/playlist'
   templateUrl: 'build/pages/home/home.html',
 })
 export class HomePage {
-  playlists = [{name: 'Muzak'}, {name: 'Dance Party'}]
+  // playlists = [
+  //   {id: 1, name: 'Muzak'},
+  //   {id: 2, name: 'Dance Party'},
+  //   {id: 3, name: 'Disco Fever'}
+  // ]
+  playlists = []
 
   constructor(platform: Platform, nav: NavController) {
     this.nav = nav

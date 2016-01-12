@@ -6,6 +6,11 @@ import {Page, NavController, NavParams} from 'ionic/ionic';
 })
 export default class PlaylistPage {
   selectedSong = null
+  // songs = [
+  //   {name: 'Sweet Home Chicago', artist: 'Matty Rico'},
+  //   {name: 'Monkey Moves', artist: 'Gorilla Bob'},
+  //   {name: 'Long Legs', artist: 'DJ Giraffe Jeff'},
+  // ]
   songs = []
 
   constructor(nav: NavController, params: NavParams) {
