@@ -1,21 +1,21 @@
-import {Page, Platform} from 'ionic/ionic';
+import {Page, Platform, NavController} from 'ionic/ionic';
+import PlaylistPage from '../playlist/playlist'
 
 @Page({
   templateUrl: 'build/pages/home/home.html',
 })
 export class HomePage {
   playlists = [{name: 'Muzak'}, {name: 'Dance Party'}]
-  ready = false
 
-  constructor(platform: Platform) {
+  constructor(platform: Platform, nav: NavController) {
+    this.nav = nav
     platform.ready()
       .then(getPlaylists)
       .then(list => this.playlists = list)
   }
   playlistSelected(playlist) {
-    console.log(playlist);
+    this.nav.push(PlaylistPage, {playlist: playlist})
   }
-
 }
 
 function getPlaylists() {

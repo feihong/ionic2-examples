@@ -1,0 +1,17 @@
+<ion-navbar *navbar>
+  <ion-title>
+    {{playlist.name}}
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+  <ion-list>
+    <ion-list-header>
+      {{songs.length}} songs
+    </ion-list-header>
+    <ion-item *ngFor='#song of songs' (click)='songSelected(song)'>
+      <h2>{{song.name}}</h2>
+      <p>{{song.artist}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
